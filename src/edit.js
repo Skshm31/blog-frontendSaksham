@@ -71,8 +71,13 @@ function Edit(){
                         <span>Body of the blog</span>
                       </div>
                       <div className="row">
-                        <textarea value={summarydata} onChange={summarychange}rows="20" placeholder={editmovie.Title}></textarea>
+                        <textarea value={summarydata} onChange={summarychange}rows="15" placeholder={editmovie.Title}></textarea>
                         </div>
+                        <div className="row">
+                        <span>URL for the image of the Blog</span>
+                      </div>
+                      <div className="row">
+                        <textarea value={description} onChange={(event)=>{changedescription(event.target.value)}} placeholder={editmovie.Title} maxLength={1000}></textarea></div>
                         <div className="row">    
                         <Link to={{pathname:'/blogs'}}><button onClick={addsubmit}>Submit</button></Link></div>
                         <div class="row">
