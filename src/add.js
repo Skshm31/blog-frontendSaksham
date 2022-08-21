@@ -9,6 +9,7 @@ function Add(){
     const [summarydata,changesummarydata]=useState('')
     const [images, setImages]=useState([]);
     const [imageURLs, setImageURLs]=useState([]);
+    const [url,seturl]=useState('');
     const titlechange=(event)=>{
         changetitle(event.target.value)
     }
@@ -56,8 +57,13 @@ function Add(){
                         <span>Body of the blog</span>
                       </div>
                       <div className="row">
-                        <textarea value={summarydata} onChange={summarychange}rows="20"placeholder="please enter the content of code here"></textarea>
+                        <textarea value={summarydata} onChange={summarychange}rows="17"placeholder="please enter the content of code here"></textarea>
                         </div>
+                        <div className="row">
+                        <span>URL for the image of the Blog</span>
+                      </div>
+                      <div className="row">
+                        <textarea value={url} onChange={(event)=>seturl(event.target.value)} placeholder="Please enter the URL for image" maxLength={1000}></textarea></div>
                         <div className="row">    
                         <Link to={{pathname:'/blogs'}}><button onClick={addsubmit}>Submit</button></Link></div>
                         <div class="row">
